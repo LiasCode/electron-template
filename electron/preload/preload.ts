@@ -7,4 +7,3 @@ const ElectronAPI = {
 };
 
 contextBridge.exposeInMainWorld("electronAPI", ElectronAPI);
-

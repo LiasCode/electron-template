@@ -1,11 +1,11 @@
 import { app, BrowserWindow } from "electron";
 import path from "node:path";
 import isDev from "electron-is-dev";
-import "./handlers.js"
+import "./handlers.js";
 
 const URL_DEV = "http://localhost:5173";
-const FRONTEND_ASSETS_DIR = path.join(import.meta.dirname,"..", "frontend");
-const INDEX_HTML_PATH = path.join(FRONTEND_ASSETS_DIR,"index.html");
+const FRONTEND_ASSETS_DIR = path.join(import.meta.dirname, "..", "frontend");
+const INDEX_HTML_PATH = path.join(FRONTEND_ASSETS_DIR, "index.html");
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -21,7 +21,6 @@ function createWindow() {
     },
     center: true,
   });
-
 
   if (isDev) {
     console.log("Loading from url -> " + URL_DEV);
@@ -47,4 +46,3 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
-

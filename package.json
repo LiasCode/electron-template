@@ -6,19 +6,13 @@
   "scripts": {
     "frontend:dev": "node ./scripts/frontend-dev.mjs",
     "frontend:build": "node ./scripts/frontend-build.mjs",
-
     "electron:dev": "node ./scripts/electron-dev.mjs",
     "electron:build": "node ./scripts/electron-build.mjs",
-
     "clean": "node ./scripts/clean.mjs",
-
     "package": "npm run build && node ./scripts/packager.mjs",
     "builder": "npm run build && node ./scripts/builder.mjs",
-
     "dev": "npm run clean && npm-run-all --parallel frontend:dev electron:dev",
-
     "build": "npm run clean && npm-run-all --parallel frontend:build electron:build",
-
     "format": "prettier ./electron --ignore-unknown --write --config .prettierrc.json",
     "postinstall": "electron-builder install-app-deps"
   },
@@ -41,5 +35,6 @@
     "prettier": "3.2.5",
     "typescript": "5.4.5",
     "wait-on": "7.2.0"
-  }
+  },
+  "packageManager": "pnpm@9.1.1+sha512.14e915759c11f77eac07faba4d019c193ec8637229e62ec99eefb7cf3c3b75c64447882b7c485142451ee3a6b408059cdfb7b7fa0341b975f12d0f7629c71195"
 }
