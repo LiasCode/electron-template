@@ -6,4 +6,4 @@ const frontendDir = path.join(process.cwd(), "frontend");
 
 process.chdir(frontendDir);
 
-child_process.spawn("npm", ["run", "dev"], { cwd: frontendDir, stdio: "inherit" });
+child_process.spawn("npm", ["run", "dev"], { cwd: frontendDir, stdio: "inherit", shell: true });

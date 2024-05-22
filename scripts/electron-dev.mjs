@@ -21,7 +21,7 @@ console.log("Waiting for " + opts.resources[0]);
 await waitOn(opts);
 
 function spawnExecElectron() {
-  return spawn("electron", [ELECTRON_MAIN_PATH], { stdio: "inherit" });
+  return spawn("electron", [ELECTRON_MAIN_PATH], { stdio: "inherit", shell: true });
 }
 
 buildElectron();

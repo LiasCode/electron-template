@@ -1,9 +1,9 @@
 // @ts-check
 import esbuild from "esbuild";
-import {spawnSync} from "child_process";
+import { spawnSync } from "child_process";
 
 export function buildElectron() {
-  spawnSync("tsc", [], { stdio : "inherit" });
+  spawnSync("tsc", [], { stdio: "inherit", shell: true });
   console.log("ELECTRON BUILDED");
 
   esbuild.buildSync({
