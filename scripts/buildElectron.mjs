@@ -1,9 +1,17 @@
 // @ts-check
 import esbuild from "esbuild";
-import { spawnSync } from "child_process";
 
-export function buildElectron() {
-  spawnSync("tsc", [], { stdio: "inherit", shell: true });
+export function buildElectron(mode = "dev") {
+  esbuild.buildSync({
+    bundle: true,
+    entryPoints: ["./electron/main.ts"],
+    platform: "node",
+    target: "node20.4",
+    format: "esm",
+    packages: "external",
+    outfile: "./dist/electron/main.js",
+    minify: mode === "prod",
+  });
   console.log("ELECTRON BUILDED");
 
   esbuild.buildSync({
@@ -13,6 +21,7 @@ export function buildElectron() {
     target: "node20.4",
     packages: "external",
     outfile: "./dist/electron/preload.js",
+    minify: mode === "prod",
   });
   console.log("PRELOAD BUILDED");
 }

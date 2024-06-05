@@ -24,11 +24,11 @@ function spawnExecElectron() {
   return spawn("electron", [ELECTRON_MAIN_PATH], { stdio: "inherit", shell: true });
 }
 
-buildElectron();
+buildElectron("dev");
 let currentProcess = spawnExecElectron();
 
 chokidar.watch(path.join(process.cwd(), "electron")).on("change", () => {
   currentProcess.kill();
-  buildElectron();
+  buildElectron("dev");
   currentProcess = spawnExecElectron();
 });
