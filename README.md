@@ -8,7 +8,7 @@ $ npm install # or pnpm install or yarn install
 
 ## Important Scripts
 
-In the project directory, you can run:
+In the root project directory, you can run:
 
 ### `npm run dev`
 
@@ -22,7 +22,7 @@ Builds the app in unpackage mode in the `release/${version}` folder.<br>
 
 Builds the app and compile to targets specified in the `builder.config.mjs` file for production in the `release/${version}` folder.<br>
 
-## Build Configuration 
+## Build Configuration
 
 This project uses the `electron-builder` package to build the app.
 
@@ -38,3 +38,10 @@ If you are familiar with the setup, feel free to modify the script files.
 
 The script files are essential for the functionality of this project.
 
+## Important Notes
+
+- Remember to install frontend dependencies.
+- The frontend project should have `dev` and `build` scripts
+- The Frontend build most be in the `frontend/dist` folder
+- if you are using Vite.js set `base: "./"` in the vite config.
+- It is recommended to use hash-based routing. Most frameworks already have this implemented.
