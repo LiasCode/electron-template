@@ -15,14 +15,32 @@ function App() {
         <a href="https://solidjs.com" target="_blank">
           <img src={solidLogo} class="logo solid" alt="Solid logo" />
         </a>
+        <a href="https://www.electronjs.org/" target="_blank">
+          <img src="https://www.electronjs.org/assets/img/logo.svg" class="logo solid" alt="Solid logo" />
+        </a>
       </div>
-      <h1>Vite + Solid</h1>
+      <h1>Electron + Vite + Solid</h1>
       <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
+        <button 
+          style={{ "background-color": "#ccc" }}
+          onClick={() => setCount((count) => count + 1)}>
+          Count is 
+          <span
+            style={{ "background-color": "#fff", padding: "3px 5px", "border-radius": "5px" }}
+          >
+            {count()}
+          </span>
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Edit 
+          <code
+            style={{
+              border: "1px solid black",
+              padding: "5px",
+              "border-radius": "5px",
+              margin: "0 5px"
+            }}
+          >src/App.tsx</code> and save to test HMR
         </p>
       </div>
       <p class="read-the-docs">
