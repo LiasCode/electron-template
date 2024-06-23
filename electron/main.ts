@@ -11,6 +11,8 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
       sandbox: true,
       nodeIntegration: false,
@@ -20,6 +22,7 @@ function createWindow() {
       preload: path.join(import.meta.dirname, "preload.js"),
     },
     center: true,
+    alwaysOnTop: isDev,
   });
 
   if (isDev) {

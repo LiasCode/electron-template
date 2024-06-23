@@ -2,7 +2,7 @@
 import { spawn } from "node:child_process";
 import path from "node:path";
 import waitOn from "wait-on";
-import chokidar from "chokidar";
+// import chokidar from "chokidar";
 import { buildElectron } from "./buildElectron.mjs";
 
 const PORT = 5173;
@@ -25,10 +25,11 @@ function spawnExecElectron() {
 }
 
 buildElectron("dev");
-let currentProcess = spawnExecElectron();
+spawnExecElectron();
 
-chokidar.watch(path.join(process.cwd(), "electron")).on("change", () => {
-  currentProcess.kill();
-  buildElectron("dev");
-  currentProcess = spawnExecElectron();
-});
+// Autorestart electron process on file change in progress
+// chokidar.watch(path.join(process.cwd(), "electron")).on("change", () => {
+//   currentProcess.kill();
+//   buildElectron("dev");
+//   currentProcess = spawnExecElectron();
+// });

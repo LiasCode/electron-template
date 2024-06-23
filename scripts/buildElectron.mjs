@@ -12,7 +12,7 @@ export function buildElectron(mode = "dev") {
     outfile: "./dist/electron/main.js",
     minify: mode === "prod",
   });
-  console.log("1- FINISH: ELECTRON BUILD");
+  console.log("1- ELECTRON BUILDED");
 
   esbuild.buildSync({
     bundle: true,
@@ -23,5 +23,5 @@ export function buildElectron(mode = "dev") {
     outfile: "./dist/electron/preload.js",
     minify: mode === "prod",
   });
-  console.log("2- FINISH: PRELOAD BUILD");
+  console.log("2-PRELOAD BUILDED");
 }
