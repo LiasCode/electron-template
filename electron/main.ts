@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from "electron";
 import path from "node:path";
 import isDev from "electron-is-dev";
-import "./handlers.js";
+import "./handlers";
 
 const URL_DEV = "http://localhost:5173";
 const FRONTEND_ASSETS_DIR = path.join(import.meta.dirname, "..", "frontend");
@@ -22,6 +22,7 @@ function createWindow() {
       preload: path.join(import.meta.dirname, "preload.js"),
     },
     center: true,
+    darkTheme: true,
     alwaysOnTop: isDev,
   });
 
