@@ -15,7 +15,8 @@
     "dev": "cross-env npm run clean && cross-env npm-run-all --parallel frontend:dev electron:dev",
     "build": "cross-env npm run clean && cross-env npm-run-all --parallel frontend:build electron:build",
     "format": "cross-env prettier ./electron --ignore-unknown --write --config .prettierrc.json",
-    "postinstall": "cross-env electron-builder install-app-deps"
+    "postinstall": "cross-env electron-builder install-app-deps",
+    "rebuild": "electron-rebuild -f -w yourmodule"
   },
   "keywords": [],
   "author": "LiasCode",
@@ -23,9 +24,11 @@
   "description": "Electron agnostic frontend framework template",
   "dependencies": {
     "electron-is-dev": "3.0.1",
+    "sqlite3": "^5.1.7",
     "zod": "3.23.8"
   },
   "devDependencies": {
+    "@electron/rebuild": "3.6.0",
     "@types/wait-on": "5.3.4",
     "chokidar": "3.6.0",
     "cross-env": "7.0.3",
