@@ -27,6 +27,6 @@ export const ELECTRON_BUILDER_CONFIG = {
   },
   linux: {
     target: ["AppImage"],
-    artifactName: "${productName}-Linux-${version}.${ext}",
+    artifactName: "${productName}-Linux-${version}.${ext}"
   },
 };
