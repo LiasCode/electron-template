@@ -2,7 +2,7 @@ import { app, BrowserWindow } from "electron";
 import path from "node:path";
 import isDev from "electron-is-dev";
 import "./handlers";
-import "./db"
+import "./db";
 
 const URL_DEV = "http://localhost:5173";
 const FRONTEND_ASSETS_DIR = path.join(import.meta.dirname, "..", "frontend");

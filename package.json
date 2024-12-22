@@ -1,22 +1,21 @@
 {
   "name": "electron-template",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "./dist/electron/main.js",
   "type": "module",
   "scripts": {
-    "frontend:dev": "cross-env node ./scripts/frontend-dev.mjs",
-    "frontend:build": "cross-env node ./scripts/frontend-build.mjs",
-    "electron:dev": "cross-env node ./scripts/electron-dev.mjs",
-    "electron:build": "cross-env node ./scripts/electron-build.mjs",
+    "frontend:dev": "node ./scripts/frontend-dev.mjs",
+    "frontend:build": "node ./scripts/frontend-build.mjs",
+    "electron:dev": "node ./scripts/electron-dev.mjs",
+    "electron:build": "node ./scripts/electron-build.mjs",
     "electron:check": "tsc --noEmit --project ./tsconfig.json",
-    "clean": "cross-env node ./scripts/clean.mjs",
-    "package": "cross-env npm run electron:check && npm run build && cross-env node ./scripts/packager.mjs",
-    "builder": "cross-env npm run electron:check && npm run build && cross-env node ./scripts/builder.mjs",
-    "dev": "cross-env npm run clean && cross-env npm-run-all --parallel frontend:dev electron:dev",
-    "build": "cross-env npm run clean && cross-env npm-run-all --parallel frontend:build electron:build",
-    "format": "cross-env prettier ./electron --ignore-unknown --write --config .prettierrc.json",
-    "postinstall": "cross-env electron-builder install-app-deps",
-    "rebuild": "electron-rebuild -f -w yourmodule"
+    "clean": "node ./scripts/clean.mjs",
+    "package": "pm run electron:check && npm run build && cross-env node ./scripts/packager.mjs",
+    "builder": "npm run electron:check && npm run build && cross-env node ./scripts/builder.mjs",
+    "dev": "npm run clean && cross-env npm-run-all --parallel frontend:dev electron:dev",
+    "build": "npm run clean && cross-env npm-run-all --parallel frontend:build electron:build",
+    "format": "prettier ./electron --ignore-unknown --write --config .prettierrc.json",
+    "postinstall": "electron-builder install-app-deps"
   },
   "keywords": [],
   "author": "LiasCode",
@@ -27,6 +26,9 @@
     "sqlite3": "^5.1.7",
     "zod": "3.23.8"
   },
+  "workspaces": [
+    "frontend"
+  ],
   "devDependencies": {
     "@electron/rebuild": "3.6.0",
     "@types/wait-on": "5.3.4",
