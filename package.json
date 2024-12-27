@@ -10,7 +10,7 @@
     "electron:build": "node ./scripts/electron-build.mjs",
     "electron:check": "tsc --noEmit --project ./tsconfig.json",
     "clean": "node ./scripts/clean.mjs",
-    "package": "pm run electron:check && npm run build && cross-env node ./scripts/packager.mjs",
+    "package": "npm run electron:check && npm run build && cross-env node ./scripts/packager.mjs",
     "builder": "npm run electron:check && npm run build && cross-env node ./scripts/builder.mjs",
     "dev": "npm run clean && cross-env npm-run-all --parallel frontend:dev electron:dev",
     "build": "npm run clean && cross-env npm-run-all --parallel frontend:build electron:build",
